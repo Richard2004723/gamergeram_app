@@ -262,7 +262,7 @@ const Layout = ({ currentUserProfile, children, navigate }) => {
 };
 
 // --- MAIN APPLICATION ---
-export default function App() {
+const App = () => {
     const [user, setUser] = useState(null);
     const [currentUserProfile, setCurrentUserProfile] = useState(null);
     const [page, setPage] = useState(null); 
@@ -360,6 +360,8 @@ export default function App() {
         </>
     );
 }
+
+export default App;
 
 // --- SUB-PAGES & COMPONENTS ---
 
