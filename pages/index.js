@@ -79,7 +79,7 @@ async function fetchUserProfileByUsername(username) {
 
 // --- NOTIFICATION COMPONENT ---
 const Notification = ({ message, isError }) => (
-    <div className={`p-4 rounded-lg shadow-lg text-white animate-fade-in-out ${isError ? 'bg-red-500' : 'bg-green-500'}`}>
+    <div className={`p-4 rounded-lg shadow-lg text-white animate-fade-in ${isError ? 'bg-red-500' : 'bg-green-500'}`}>
         {message}
     </div>
 );
@@ -167,7 +167,7 @@ const AuthPage = () => {
         <main className="min-h-screen flex items-center justify-center bg-black p-4 text-white">
             <div className="w-full max-w-sm">
                 {authMode === 'signin' && (
-                    <div className="p-8 space-y-6 bg-[#1a1a1a] rounded-xl border border-[#2a2a2a]">
+                    <div className="p-8 space-y-6 bg-[#1a1a1a] rounded-xl border border-[#2a2a2a] animate-fade-in">
                         <h2 className="text-3xl font-bold text-center"><span className="text-[#A78BFA]">Gamer</span>Gram</h2>
                         <form onSubmit={handleSignIn} className="space-y-4">
                             <input name="email" type="email" placeholder="Email" className="w-full bg-black border border-gray-700 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#A78BFA]" required />
@@ -183,7 +183,7 @@ const AuthPage = () => {
                     </div>
                 )}
                 {authMode === 'signup' && (
-                     <div className="p-8 space-y-6 bg-[#1a1a1a] rounded-xl border border-[#2a2a2a]">
+                     <div className="p-8 space-y-6 bg-[#1a1a1a] rounded-xl border border-[#2a2a2a] animate-fade-in">
                         <h2 className="text-3xl font-bold text-center">Sign Up for <span className="text-[#A78BFA]">Gamer</span>Gram</h2>
                         <form onSubmit={handleSignUp} className="space-y-4">
                              <input name="email" type="email" placeholder="Email" className="w-full bg-black border border-gray-700 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#A78BFA]" required />
@@ -196,7 +196,7 @@ const AuthPage = () => {
                     </div>
                 )}
                 {authMode === 'forgot' && (
-                     <div className="p-8 space-y-6 bg-[#1a1a1a] rounded-xl border border-[#2a2a2a]">
+                     <div className="p-8 space-y-6 bg-[#1a1a1a] rounded-xl border border-[#2a2a2a] animate-fade-in">
                         <h2 className="text-3xl font-bold text-center">Reset Password</h2>
                         <form onSubmit={handleForgotPassword} className="space-y-4">
                             <input name="email" type="email" placeholder="Email" className="w-full bg-black border border-gray-700 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#A78BFA]" required />
