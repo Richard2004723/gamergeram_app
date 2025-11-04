@@ -78,10 +78,6 @@ const fetchUserProfileByUsername = async (db, username) => {
 };
 
 // --- GLOBAL VARIABLES ARE NOW UNUSED ---
-// const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-// const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
-// const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-// setLogLevel('Debug'); // No longer needed
 const appId = 'mock-app-id';
 
 
@@ -286,7 +282,8 @@ const PostCard = ({ post, currentUserProfile, showNotification, navigate, update
     const isLiked = post.likes.includes(currentUserProfile.id);
 
     // Optimized: Comments should be displayed in the order they were stored.
-    const sortedComments = post.comments?.slice().sort((a,b) => (a.createdAt?.toDate() || a.createdAt || 0) - (b.createdAt?.toDate() || b.createdAt || 0)) || [];
+    // FIX APPLIED HERE: Using unary plus (+) to convert Date objects to milliseconds for sorting.
+    const sortedComments = post.comments?.slice().sort((a,b) => (+a.createdAt || 0) - (+b.createdAt || 0)) || [];
 
     const handleLike = async () => {
         // MOCK: Simulate network delay
